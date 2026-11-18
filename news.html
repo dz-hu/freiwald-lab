@@ -1,0 +1,14 @@
+---
+title: News
+slug: news
+permalink: /news/
+---
+{% assign news_by_year = site.news | sort: "date" | reverse | group_by_exp: "n", "n.date | date: '%Y'" %}
+{% for y in news_by_year %}
+<section class="news-year">
+  <h2>{{ y.name }}</h2>
+  <ul class="news-list">
+    {% for item in y.items %}{% include news-item.html item=item %}{% endfor %}
+  </ul>
+</section>
+{% endfor %}

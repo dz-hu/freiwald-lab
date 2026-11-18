@@ -1,0 +1,15 @@
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div>
+      <strong>{{ site.long_title }}</strong><br>
+      {% for line in site.address %}{{ line }}<br>{% endfor %}
+    </div>
+    <div>
+      <a href="mailto:{{ site.email }}">{{ site.email }}</a><br>
+      <a href="{{ site.institution_url }}">{{ site.institution }}</a>
+    </div>
+    <div class="footer-meta">
+      &copy; {{ 'now' | date: '%Y' }} {{ site.title }}
+    </div>
+  </div>
+</footer>

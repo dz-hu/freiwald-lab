@@ -1,0 +1,39 @@
+---
+title: Publications
+slug: publications
+permalink: /publications/
+---
+{%- assign manual = site.data.publications_manual -%}
+{%- assign all = site.data.publications_auto -%}
+{%- if manual.extra.size > 0 -%}{%- assign all = all | concat: manual.extra -%}{%- endif -%}
+{%- assign years = all | group_by: "year" | sort: "name" | reverse -%}
+
+<p class="intro">
+  Updated automatically from
+  <a href="https://pubmed.ncbi.nlm.nih.gov/?term={{ site.pi_pubmed_name | append: '[Author]' | url_encode }}&sort=date">PubMed</a>.
+  <strong>{{ site.pi_pubmed_name }}</strong> is shown in bold.
+</p>
+
+<div class="pub-tools">
+  <input type="search" id="pub-search" placeholder="Search titles, authors, journals…" aria-label="Search publications">
+  <label><input type="checkbox" id="pub-selected"> Selected only</label>
+  <span id="pub-count" class="muted"></span>
+</div>
+
+<nav class="year-nav" aria-label="Jump to year">
+  {% for y in years %}<a href="#y{{ y.name }}">{{ y.name }}</a>{% endfor %}
+</nav>
+
+{% for y in years %}
+<section class="pub-year" id="y{{ y.name }}">
+  <h2>{{ y.name }}</h2>
+  <ul class="pub-list">
+    {% for p in y.items %}
+      {% if p.pmid and manual.exclude contains p.pmid %}{% continue %}{% endif %}
+      {% assign ov = nil %}
+      {% if p.pmid %}{% assign ov = manual.overrides | where: "pmid", p.pmid | first %}{% else %}{% assign ov = p %}{% endif %}
+      {% include pub-item.html pub=p override=ov %}
+    {% endfor %}
+  </ul>
+</section>
+{% endfor %}

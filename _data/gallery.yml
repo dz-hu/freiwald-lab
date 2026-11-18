@@ -1,0 +1,23 @@
+# ------------------------------------------------------------------
+#  Gallery photos. Put image files in assets/img/gallery/ and list them here.
+#  Newest first. Leave `image` empty to show a placeholder tile.
+# ------------------------------------------------------------------
+
+- image:
+  caption: Lab retreat (photo coming soon)
+  date: 2026
+- image:
+  caption: Lab meeting (photo coming soon)
+  date: 2026
+- image:
+  caption: Conference (photo coming soon)
+  date: 2026
+- image:
+  caption: Lab outing (photo coming soon)
+  date: 2026
+- image:
+  caption: Holiday party (photo coming soon)
+  date: 2025
+- image:
+  caption: Lab photo (photo coming soon)
+  date: 2025

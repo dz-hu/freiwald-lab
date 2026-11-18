@@ -1,0 +1,25 @@
+---
+title: Contact
+slug: contact
+permalink: /contact/
+---
+<div class="contact-grid">
+  <div>
+    <h2>Address</h2>
+    <p>
+      <strong>{{ site.long_title }}</strong><br>
+      {% for line in site.address %}{{ line }}<br>{% endfor %}
+    </p>
+
+    <h2>Email</h2>
+    <p>
+      Winrich Freiwald (PI): <a href="mailto:{{ site.email }}">{{ site.email }}</a><br>
+      Lihong Yin (Lab Manager): <a href="mailto:{{ site.lab_manager_email }}">{{ site.lab_manager_email }}</a>
+    </p>
+  </div>
+  <div class="map">
+    <iframe title="Map of The Rockefeller University"
+      src="https://www.google.com/maps?q=The+Rockefeller+University,+1230+York+Ave,+New+York,+NY+10065&output=embed"
+      loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+</div>

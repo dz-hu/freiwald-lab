@@ -1,0 +1,7 @@
+---
+date: 2026-12-01
+headline: Optional bold headline (delete this line if not needed)
+---
+Write one or two sentences here. Markdown works: *italic*, **bold**, [link text](https://example.com).
+
+<!-- Copy this file to _news/YYYY-MM-DD-short-name.md (note the .md ending) and edit it. -->

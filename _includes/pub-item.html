@@ -1,0 +1,55 @@
+{%- comment -%}
+  Renders one publication.
+  include.pub      – record from publications_auto.json or publications_manual.yml (extra)
+  include.override – matching entry from publications_manual.yml overrides (optional)
+  include.compact  – shorter version (used on Home / Research pages)
+{%- endcomment -%}
+{%- assign p = include.pub -%}
+{%- assign ov = include.override -%}
+{%- assign authors = p.authors | split: ", " -%}
+{%- assign pi = site.pi_pubmed_name -%}
+{%- assign max_authors = 12 -%}
+{%- if include.compact -%}{%- assign max_authors = 6 -%}{%- endif -%}
+
+{%- capture author_html -%}
+  {%- if authors.size > max_authors -%}
+    {%- assign head_n = max_authors | minus: 2 -%}
+    {%- assign shown = authors | slice: 0, head_n -%}
+    {%- assign pi_in_head = false -%}
+    {%- assign pi_full = "" -%}
+    {%- for a in authors -%}{%- assign a_start = a | slice: 0, pi.size -%}{%- if a_start == pi -%}{%- assign pi_full = a -%}{%- endif -%}{%- endfor -%}
+    {%- for a in shown -%}{%- assign a_start = a | slice: 0, pi.size -%}{%- if a_start == pi -%}<strong>{{ a }}</strong>{%- assign pi_in_head = true -%}{%- else -%}{{ a }}{%- endif -%}{%- unless forloop.last -%}, {% endunless -%}{%- endfor -%}
+    {%- assign last_a = authors | last -%}
+    {%- if pi_in_head == false and pi_full != "" and pi_full != last_a -%}, …, <strong>{{ pi_full }}</strong>{%- endif -%}, …, {% assign l_start = last_a | slice: 0, pi.size %}{% if l_start == pi %}<strong>{{ last_a }}</strong>{% else %}{{ last_a }}{% endif %}
+    <span class="muted">({{ authors.size }} authors)</span>
+  {%- else -%}
+    {%- for a in authors -%}{%- assign a_start = a | slice: 0, pi.size -%}{%- if a_start == pi -%}<strong>{{ a }}</strong>{%- else -%}{{ a }}{%- endif -%}{%- unless forloop.last -%}, {% endunless -%}{%- endfor -%}
+  {%- endif -%}
+{%- endcapture -%}
+
+{%- assign main_url = p.url -%}
+{%- if p.doi and p.doi != "" -%}{%- assign main_url = "https://doi.org/" | append: p.doi -%}{%- elsif p.pmid -%}{%- assign main_url = "https://pubmed.ncbi.nlm.nih.gov/" | append: p.pmid | append: "/" -%}{%- endif -%}
+
+<li class="pub{% if ov.highlight %} pub-highlight{% endif %}{% if p.preprint %} pub-preprint{% endif %}" data-highlight="{% if ov.highlight %}1{% else %}0{% endif %}">
+  <div class="pub-title">
+    {% if main_url %}<a href="{{ main_url }}">{{ p.title }}</a>{% else %}{{ p.title }}{% endif %}
+    {% if ov.highlight and include.compact != true %}<span class="badge">Selected</span>{% endif %}
+    {% if p.preprint %}<span class="badge badge-muted">Preprint</span>{% endif %}
+  </div>
+  <div class="pub-authors">{{ author_html | strip }}</div>
+  <div class="pub-venue">
+    <em>{{ p.journal_abbrev | default: p.journal }}</em> {{ p.year }}{% unless include.compact %}{% if p.volume != "" and p.volume %}; {{ p.volume }}{% if p.issue != "" and p.issue %}({{ p.issue }}){% endif %}{% if p.pages != "" and p.pages %}:{{ p.pages }}{% endif %}{% endif %}{% endunless %}
+    {%- if ov.note %} · <span class="pub-note">{{ ov.note }}</span>{% endif %}
+  </div>
+  {% unless include.compact %}
+  <div class="pub-links">
+    {% if p.doi and p.doi != "" %}<a href="https://doi.org/{{ p.doi }}">DOI</a>{% endif %}
+    {% if p.pmid %}<a href="https://pubmed.ncbi.nlm.nih.gov/{{ p.pmid }}/">PubMed</a>{% endif %}
+    {% if p.pmcid and p.pmcid != "" %}<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/{{ p.pmcid }}/">Free full text</a>{% endif %}
+    {% if p.url and p.doi == nil %}<a href="{{ p.url }}">Link</a>{% endif %}
+    {% if ov.pdf %}<a href="{{ ov.pdf | relative_url }}">PDF</a>{% endif %}
+    {% if ov.code %}<a href="{{ ov.code }}">Code</a>{% endif %}
+    {% if ov.data %}<a href="{{ ov.data }}">Data</a>{% endif %}
+  </div>
+  {% endunless %}
+</li>

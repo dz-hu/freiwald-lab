@@ -1,0 +1,17 @@
+---
+title: Gallery
+slug: gallery
+permalink: /gallery/
+---
+<div class="gallery">
+  {% for photo in site.data.gallery %}
+  <figure>
+    {% if photo.image and photo.image != "" %}
+      <a href="{{ photo.image | relative_url }}"><img src="{{ photo.image | relative_url }}" alt="{{ photo.caption }}" loading="lazy"></a>
+    {% else %}
+      <div class="photo-placeholder" aria-hidden="true"></div>
+    {% endif %}
+    <figcaption>{{ photo.caption }}{% if photo.date %} <span class="muted">· {{ photo.date }}</span>{% endif %}</figcaption>
+  </figure>
+  {% endfor %}
+</div>

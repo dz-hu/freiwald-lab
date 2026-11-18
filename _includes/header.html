@@ -1,0 +1,22 @@
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="{{ '/' | relative_url }}">
+      <span class="brand-title">{{ site.title }}</span>
+      <span class="brand-sub">{{ site.long_title }} · {{ site.institution }}</span>
+    </a>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="site-nav">
+      <span></span><span></span><span></span>
+    </button>
+    <nav id="site-nav" class="site-nav">
+      {% for item in site.navigation %}
+        {% assign active = false %}
+        {% if item.url == '/' %}
+          {% if page.url == '/' or page.url == '/index.html' %}{% assign active = true %}{% endif %}
+        {% elsif page.url contains item.url %}
+          {% assign active = true %}
+        {% endif %}
+        <a href="{{ item.url | relative_url }}"{% if active %} class="active" aria-current="page"{% endif %}>{{ item.title }}</a>
+      {% endfor %}
+    </nav>
+  </div>
+</header>

@@ -1,0 +1,45 @@
+# ------------------------------------------------------------------
+#  Manual additions & corrections to the publication list.
+#
+#  The main list is downloaded from PubMed automatically every week into
+#  _data/publications_auto.json (don't edit that file — changes would be
+#  overwritten). Use THIS file instead:
+#
+#  1. exclude  – PubMed IDs to hide (wrong person, duplicates, etc.)
+#  2. overrides – add links or a highlight to a PubMed paper, by PMID
+#  3. extra    – papers that are not in PubMed (preprints, book chapters…)
+#
+#  Always put PMIDs in quotes, e.g. "21051642".
+# ------------------------------------------------------------------
+
+exclude: []
+  # - "12345678"
+
+overrides:
+  # Fields: highlight (true/false), pdf, code, data, note
+  - pmid: "21051642"   # Freiwald & Tsao 2010, Science
+    highlight: true
+  - pmid: "28798130"   # Landi & Freiwald 2017, Science
+    highlight: true
+  - pmid: "28522533"   # Sliwa & Freiwald 2017, Science
+    highlight: true
+  - pmid: "34210891"   # Landi et al. 2021, Science
+    highlight: true
+  - pmid: "41505546"   # Ianni et al. 2026, Science
+    highlight: true
+  - pmid: "42162420"   # Tian et al. 2026, Nature
+    highlight: true
+  # - pmid: "12345678"
+  #   pdf: /assets/pdf/example.pdf
+  #   code: https://github.com/...
+  #   data: https://...
+  #   note: "Cover article"
+
+extra: []
+  # - title: "Title of the paper"
+  #   authors: "Doe J, Freiwald WA"
+  #   journal: "Book / Journal name"
+  #   year: 2026
+  #   url: https://...
+  #   doi: 10.xxxx/xxxxx
+  #   preprint: false

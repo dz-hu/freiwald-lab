@@ -1,0 +1,89 @@
+# ------------------------------------------------------------------
+#  Lab members, grouped as they appear on the People page.
+#
+#  To add someone: copy an existing entry inside the right group and edit it.
+#  To move someone to Alumni: cut their entry and paste it under "Alumni"
+#  (you can add `now:` to say where they went).
+#
+#  Fields (all optional except name and title):
+#    name:   Display name
+#    title:  Position
+#    email:
+#    photo:  /assets/img/people/<file>.jpg   (square, ~600x600 px; leave empty for initials)
+#    bio:    One or two sentences
+#    links:  website / scholar / orcid / github / x / bluesky / linkedin
+#    now:    (alumni only) current position
+# ------------------------------------------------------------------
+
+- group: Principal Investigator
+  style: featured
+  members:
+    - name: Winrich A. Freiwald, Ph.D.
+      title: Denise A. and Eugene W. Chinery Professor · Head of Laboratory
+      email: Winrich.Freiwald@rockefeller.edu
+      photo:
+      bio: >-
+        Bio coming soon.
+      links:
+        website: https://www.rockefeller.edu/our-scientists/heads-of-laboratories/974-winrich-freiwald/
+
+- group: Research Scientists
+  members:
+    - name: Tomoki Suzuki
+      title: Visiting Assistant Professor
+      email: Tomoki.Suzuki@rockefeller.edu
+    - name: Minggui Chen
+      title: Research Associate
+      email: Minggui.Chen@rockefeller.edu
+    - name: Lucas Tian
+      title: Research Associate
+      email: Lucas.Tian@rockefeller.edu
+
+- group: Postdoctoral Researchers
+  members:
+    - name: Siqi Fan
+      title: Postdoctoral Associate
+      email: Siqi.Fan@rockefeller.edu
+    - name: Dingzhi Hu
+      title: Postdoctoral Associate
+      email: Dingzhi.Hu@rockefeller.edu
+    - name: Niansheng Ju
+      title: Postdoctoral Associate
+      email: Niansheng.Ju@rockefeller.edu
+    - name: Ryan Morrill
+      title: Postdoctoral Fellow
+      email: Ryan.Morrill@rockefeller.edu
+    - name: Hamed Rahimi Nasrabadi
+      title: Postdoctoral Associate
+      email: Hamed.RahimiNasrabadi@rockefeller.edu
+
+- group: Graduate Students
+  members:
+    - name: Santiago Otero Coronel
+      title: Graduate Fellow
+      email: Santiago.OteroCoronel@rockefeller.edu
+    - name: Faraz Yazdanibanafshedaragh
+      title: Graduate Fellow
+      email: Faraz.Yazdanibanafshedaragh@rockefeller.edu
+
+- group: Staff
+  members:
+    - name: Lihong Yin
+      title: Laboratory Manager
+      email: Lihong.Yin@rockefeller.edu
+    - name: Wilbert Zarco
+      title: Research Specialist
+      email: Wilbert.Zarco@rockefeller.edu
+    - name: Sam Moldenhauer
+      title: Research Assistant
+      email: Samuel.Moldenhauer@rockefeller.edu
+    - name: Alejandra Gonzalez
+      title: Animal Technician
+      email: Alejandra.Gonzalez@rockefeller.edu
+
+- group: Alumni
+  style: list
+  members: []
+    # - name: Jane Doe
+    #   title: Postdoctoral Fellow, 2015–2020
+    #   now: Assistant Professor, Example University

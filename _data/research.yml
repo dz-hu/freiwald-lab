@@ -1,0 +1,67 @@
+# ------------------------------------------------------------------
+#  Research areas (Research page + the cards on the Home page).
+#  DRAFT TEXT — to be revised by the PI.
+#
+#  papers: PubMed IDs of representative papers. Titles/journals are looked
+#  up automatically from the publication list, so only the PMID is needed.
+#  image:  /assets/img/research/<file>  (wide image, ~1200x700 px)
+# ------------------------------------------------------------------
+
+- id: faces
+  title: Face perception & the face-processing network
+  short: >-
+    How a network of face-selective areas in the primate temporal and
+    frontal lobes turns visual input into rich representations of faces.
+  image: /assets/img/research/faces.svg
+  description: >-
+    Faces are among the most important visual stimuli in primate social life.
+    In the macaque brain, face processing is carried out by a set of
+    interconnected, face-selective patches. We combine fMRI, targeted
+    electrophysiology, causal manipulations and behavior to understand how
+    each node of this network encodes faces, how the nodes interact, and how
+    their activity gives rise to the perception of facial identity,
+    expression, and dynamics.
+  papers: ["21051642", "18535247", "19668199", "28375078"]
+
+- id: recognition
+  title: Person recognition & social memory
+  short: >-
+    How the brain links a seen face to a known person — and to everything we
+    remember about them.
+  image: /assets/img/research/recognition.svg
+  description: >-
+    Recognizing a familiar person goes beyond seeing a face: it connects
+    perception with memory and knowledge about individuals. We discovered
+    brain areas specialized for familiar faces, including a region in the
+    temporal pole that rapidly links face perception to memory, and we study
+    how such person-recognition circuits are organized in both monkeys and
+    humans.
+  papers: ["28798130", "34210891", "38954551"]
+
+- id: interaction
+  title: Attention & social interaction
+  short: >-
+    How attention selects what matters, and how dedicated networks process
+    the social interactions of others and produce our own facial gestures.
+  image: /assets/img/research/interaction.svg
+  description: >-
+    Social intelligence requires selecting relevant information and
+    understanding how others interact. We study the attention-control
+    network and its priority signals, a dedicated brain network for
+    processing social interactions between others, and the cortical
+    circuits that generate facial expressions used in communication.
+  papers: ["28522533", "30017395", "31685625", "41505546"]
+
+- id: computation
+  title: Computational principles of social intelligence
+  short: >-
+    Computational models — from inverse graphics to neural networks — that
+    explain how brains build and use social representations.
+  image: /assets/img/research/computation.svg
+  description: >-
+    We work with computational scientists to formulate and test models of
+    social cognition: how the face-processing system might invert a
+    generative model of faces, how predictions shape sensory processing,
+    and how abstract symbols and structured actions are represented in
+    the primate brain.
+  papers: ["32181338", "28957679", "38661128", "42162420"]

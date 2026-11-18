@@ -1,0 +1,29 @@
+{%- assign m = include.person -%}
+{%- assign words = m.name | remove: ", Ph.D." | split: " " -%}
+{%- assign first = words | first | slice: 0 -%}
+{%- assign last = words | last | slice: 0 -%}
+<article class="person{% if include.featured == 'featured' %} person-featured{% endif %}">
+  <div class="person-photo">
+    {% if m.photo and m.photo != "" %}
+      <img src="{{ m.photo | relative_url }}" alt="{{ m.name }}" loading="lazy">
+    {% else %}
+      <span class="initials" aria-hidden="true">{{ first }}{{ last }}</span>
+    {% endif %}
+  </div>
+  <div class="person-info">
+    <h3>{{ m.name }}</h3>
+    <p class="person-title">{{ m.title }}</p>
+    {% if m.now %}<p class="person-now">Now: {{ m.now }}</p>{% endif %}
+    {% if m.bio %}<p class="person-bio">{{ m.bio }}</p>{% endif %}
+    <p class="person-links">
+      {% if m.email %}<a href="mailto:{{ m.email }}">Email</a>{% endif %}
+      {% if m.links.website %}<a href="{{ m.links.website }}">Website</a>{% endif %}
+      {% if m.links.scholar %}<a href="{{ m.links.scholar }}">Google Scholar</a>{% endif %}
+      {% if m.links.orcid %}<a href="{{ m.links.orcid }}">ORCID</a>{% endif %}
+      {% if m.links.github %}<a href="{{ m.links.github }}">GitHub</a>{% endif %}
+      {% if m.links.x %}<a href="{{ m.links.x }}">X</a>{% endif %}
+      {% if m.links.bluesky %}<a href="{{ m.links.bluesky }}">Bluesky</a>{% endif %}
+      {% if m.links.linkedin %}<a href="{{ m.links.linkedin }}">LinkedIn</a>{% endif %}
+    </p>
+  </div>
+</article>

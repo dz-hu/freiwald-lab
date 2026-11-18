@@ -1,0 +1,70 @@
+# ------------------------------------------------------------------
+#  Site settings — edit these to change text that appears site-wide.
+#  (Restart `bundle exec jekyll serve` after editing this file.)
+# ------------------------------------------------------------------
+title: Freiwald Lab
+long_title: Laboratory of Neural Systems
+institution: The Rockefeller University
+institution_url: https://www.rockefeller.edu
+description: >-
+  The Freiwald Lab at The Rockefeller University studies the neural mechanisms
+  and computational principles of social intelligence.
+
+# Contact
+email: Winrich.Freiwald@rockefeller.edu
+lab_manager_email: Lihong.Yin@rockefeller.edu
+address:
+  - The Rockefeller University
+  - 1230 York Avenue
+  - New York, NY 10065
+
+# If the site lives at https://<name>.github.io, leave baseurl empty.
+# If it lives at https://<name>.github.io/<repo>, set baseurl: "/<repo>".
+url: "https://dz-hu.github.io"
+baseurl: "/freiwald-lab"   # TEST: personal-account preview. Change when moving to the lab account.
+
+# true = ask search engines not to index the site (for previews). Set to false at launch.
+noindex: true
+
+# Top navigation (order matters). Remove a line to hide a page from the menu.
+navigation:
+  - { title: Home, url: / }
+  - { title: Research, url: /research/ }
+  - { title: People, url: /people/ }
+  - { title: Publications, url: /publications/ }
+  - { title: News, url: /news/ }
+  - { title: Gallery, url: /gallery/ }
+  - { title: Contact, url: /contact/ }
+  # - { title: Join Us, url: /join/ }   # un-comment when there are openings
+
+# The PI's name as it appears in PubMed author lists (bolded on Publications)
+pi_pubmed_name: Freiwald W
+
+# How many news items to show on the home page
+home_news_count: 5
+
+# ------------------------------------------------------------------
+#  Build settings — usually no need to touch anything below.
+# ------------------------------------------------------------------
+collections:
+  news:
+    output: false
+
+defaults:
+  - scope: { path: "" }
+    values: { layout: page }
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+markdown: kramdown
+exclude:
+  - README.md
+  - PLAN.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - scripts
+  - .bundle
+  - .github

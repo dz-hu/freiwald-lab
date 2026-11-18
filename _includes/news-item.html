@@ -1,0 +1,6 @@
+<li class="news-item">
+  <time datetime="{{ include.item.date | date_to_xmlschema }}">{{ include.item.date | date: "%B %Y" }}</time>
+  <div class="news-body">
+    {% if include.item.headline %}<strong>{{ include.item.headline }}</strong> {% endif %}{{ include.item.content | markdownify | remove: "<p>" | remove: "</p>" | strip }}
+  </div>
+</li>

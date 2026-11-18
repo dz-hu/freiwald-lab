@@ -1,0 +1,69 @@
+---
+layout: default
+title: Home
+slug: home
+---
+<section class="hero" style="background-image: url('{{ '/assets/img/banner.svg' | relative_url }}');">
+  <div class="container hero-inner">
+    <p class="hero-kicker">{{ site.institution }}</p>
+    <h1>{{ site.long_title }}</h1>
+    <p class="hero-lead">Neural mechanisms and computational principles of social intelligence</p>
+  </div>
+</section>
+
+<section class="container welcome">
+  <h2>Welcome</h2>
+  <p>
+    The Freiwald Lab studies the neural mechanisms and computational principles of
+    social intelligence. Our main focus is how the primate brain's face-processing
+    network supports face perception, person recognition, attention and social
+    interaction.
+  </p>
+  <p><a class="button" href="{{ '/research/' | relative_url }}">Our research</a></p>
+</section>
+
+<section class="band">
+  <div class="container">
+    <h2>Research areas</h2>
+    <div class="card-grid">
+      {% for area in site.data.research %}
+      <a class="card" href="{{ '/research/' | relative_url }}#{{ area.id }}">
+        {% if area.image %}<img src="{{ area.image | relative_url }}" alt="" loading="lazy">{% endif %}
+        <div class="card-body">
+          <h3>{{ area.title }}</h3>
+          <p>{{ area.short }}</p>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="container two-col">
+  <div>
+    <h2>Lab news</h2>
+    {% assign news = site.news | sort: "date" | reverse %}
+    <ul class="news-list">
+      {% for item in news limit: site.home_news_count %}
+        {% include news-item.html item=item %}
+      {% endfor %}
+    </ul>
+    <p><a href="{{ '/news/' | relative_url }}">All news →</a></p>
+  </div>
+  <div>
+    <h2>Recent publications</h2>
+    {% assign manual = site.data.publications_manual %}
+    <ul class="pub-list pub-list-compact">
+      {% assign shown = 0 %}
+      {% for p in site.data.publications_auto %}
+        {% if manual.exclude contains p.pmid %}{% continue %}{% endif %}
+        {% if p.preprint %}{% continue %}{% endif %}
+        {% assign ov = manual.overrides | where: "pmid", p.pmid | first %}
+        {% include pub-item.html pub=p override=ov compact=true %}
+        {% assign shown = shown | plus: 1 %}
+        {% if shown >= 5 %}{% break %}{% endif %}
+      {% endfor %}
+    </ul>
+    <p><a href="{{ '/publications/' | relative_url }}">All publications →</a></p>
+  </div>
+</section>
