@@ -10,7 +10,7 @@ permalink: /people/
     {% if g.style == "list" %}
       <ul class="alumni-list">
         {% for m in g.members %}
-          <li><strong>{{ m.name }}</strong>{% if m.title %} — {{ m.title }}{% endif %}{% if m.now %}<br><span class="muted">Now: {{ m.now }}</span>{% endif %}</li>
+          <li><strong>{{ m.name }}</strong>{% if m.title %}<span class="alumni-role">{{ m.title }}</span>{% endif %}{% if m.now %}<span class="alumni-role">Now: {{ m.now }}</span>{% endif %}</li>
         {% endfor %}
       </ul>
     {% else %}

@@ -1,0 +1,14 @@
+# ------------------------------------------------------------------
+#  Internal resources shown on the "Lab Members" page (/members/).
+#  Linked from the site footer. Add one entry per link.
+#
+#    title:       Link name
+#    url:         Full address
+#    description: One short line
+#    note:        (optional) e.g. "Login required"
+# ------------------------------------------------------------------
+
+- title: Lab Wiki
+  url: https://freiwaldlab.rockefeller.edu/w/index.php?title=Main_Page
+  description: Protocols, lab procedures and internal documentation.
+  note: Requires a Freiwald Wiki account.

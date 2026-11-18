@@ -16,7 +16,7 @@
     {% if m.now %}<p class="person-now">Now: {{ m.now }}</p>{% endif %}
     {% if m.bio %}<p class="person-bio">{{ m.bio }}</p>{% endif %}
     <p class="person-links">
-      {% if m.email %}<a href="mailto:{{ m.email }}">Email</a>{% endif %}
+      {% if m.email and site.show_member_emails %}<a href="mailto:{{ m.email }}">Email</a>{% endif %}
       {% if m.links.website %}<a href="{{ m.links.website }}">Website</a>{% endif %}
       {% if m.links.scholar %}<a href="{{ m.links.scholar }}">Google Scholar</a>{% endif %}
       {% if m.links.orcid %}<a href="{{ m.links.orcid }}">ORCID</a>{% endif %}

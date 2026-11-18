@@ -37,6 +37,9 @@ navigation:
   - { title: Contact, url: /contact/ }
   # - { title: Join Us, url: /join/ }   # un-comment when there are openings
 
+# Show email links on the People page (true / false)
+show_member_emails: false
+
 # The PI's name as it appears in PubMed author lists (bolded on Publications)
 pi_pubmed_name: Freiwald W
 

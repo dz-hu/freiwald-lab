@@ -8,7 +8,7 @@
 #  Fields (all optional except name and title):
 #    name:   Display name
 #    title:  Position
-#    email:
+#    email:  (only shown if show_member_emails is true in _config.yml)
 #    photo:  /assets/img/people/<file>.jpg   (square, ~600x600 px; leave empty for initials)
 #    bio:    One or two sentences
 #    links:  website / scholar / orcid / github / x / bluesky / linkedin
@@ -29,9 +29,6 @@
 
 - group: Research Scientists
   members:
-    - name: Tomoki Suzuki
-      title: Visiting Assistant Professor
-      email: Tomoki.Suzuki@rockefeller.edu
     - name: Minggui Chen
       title: Research Associate
       email: Minggui.Chen@rockefeller.edu
@@ -62,7 +59,8 @@
     - name: Santiago Otero Coronel
       title: Graduate Fellow
       email: Santiago.OteroCoronel@rockefeller.edu
-    - name: Faraz Yazdanibanafshedaragh
+      bio: Joint student with the Vaziri Lab.
+    - name: Faraz Yazdani
       title: Graduate Fellow
       email: Faraz.Yazdanibanafshedaragh@rockefeller.edu
 
@@ -83,7 +81,191 @@
 
 - group: Alumni
   style: list
-  members: []
+  members:
+    - name: Peter Schade
+      title: PhD Student (joint with Jarvis Lab)
+      now: "Postdoc, Harvard Medical School"
+    - name: Tomoki Suzuki
+      title: Postdoc
+      now: "Hokkaido University School of Medicine"
+    - name: Coral G. Perez
+      title: Lab Technician
+    - name: Michelle Gibble
+      title: Research Assistant
+      now: "Clinical Solutions Specialist, Biorce"
+    - name: Daniel Hanuska
+      title: Research Assistant
+    - name: Kateryna Panikhina
+      title: Volunteer / BRSS Student
+    - name: Federico Emilio Magnasco
+      title: Volunteer
+    - name: Linlu Liu
+      title: Rotation Student
+      now: "Graduate Student, The Rockefeller University"
+    - name: Xuan Ma
+      title: BRSS Student / Volunteer
+      now: "Research Associate, Frank Lab, UCSF"
+    - name: David Hildebrand
+      title: Postdoc / Research Associate
+      now: "Assistant Professor, University of Houston"
+    - name: Valerie Calligy
+      title: Simons Foundation SURFiN Student
+    - name: Polina Rafailova
+      title: BRSS Student
+    - name: Stephen Serene
+      title: PhD Student / Research Assistant
+    - name: Grace Fotso
+      title: Foreign Research Intern
+    - name: Antonio Malaspina
+      title: Senior Research Associate
+      now: "Functional Neurosurgery Fellow, NYU Langone Health"
+    - name: Tarana Nigam
+      title: Visiting Student
+      now: "Postdoctoral Research Scientist, Baylor College of Medicine"
+    - name: Siddhartha Sharma
+      title: Rotation Student
+      now: "Graduate Student, The Rockefeller University"
+    - name: Kedar Garzón Gupta
+      title: Research Assistant
+      now: "Graduate Student, Columbia University"
+    - name: Yanis Tazi
+      title: Tri-I PhD Student
+      now: "Applied AI, OpenAI"
+    - name: Emre Mordeniz
+      title: Instructor in Clinical Investigation
+      now: "Istanbul Faculty of Medicine"
+    - name: Yuriria Vazquez
+      title: Postdoc
+      now: "Research Associate, Hudspeth Lab, The Rockefeller University"
+    - name: Danielle Sang
+      title: Animal Technician
+    - name: Michael Berger
+      title: Postdoc
+    - name: Sarina Karmacharya
+      title: Visiting Student
+    - name: Christina Pressl
+      title: Clinical Scholar / PhD Student
+      now: "Assistant Professor of Clinical Investigation, The Rockefeller University"
+    - name: Geena Ianni
+      title: MD-PhD Student
+      now: "Neurology Resident, University of Pennsylvania"
+    - name: Aileen Baez
+      title: Volunteer
+    - name: Benjamin Deen
+      title: Postdoc
+      now: "Assistant Professor, Tulane University"
+    - name: Gazi Husain
+      title: Volunteer
+    - name: Matt Peoples
+      title: Research Assistant
+    - name: Zetian Yang
+      title: PhD Student
+      now: "Postdoctoral Associate, NYU Langone"
+    - name: Sam Coolsaet
+      title: Foreign Research Intern
+    - name: Karolina Marciniak
+      title: Postdoc
+    - name: Farid Aboharb
+      title: MD-PhD Student
+      now: "Psychiatry Resident, University of Pennsylvania"
+    - name: Monica Jimenez
+      title: Lab Helper (Part-Time)
+    - name: Amir Farzmahdi
+      title: Visiting Student
+      now: "Postdoctoral Research Scientist, Columbia University"
+    - name: Violeta Gonzalez
+      title: Animal Technician / Temporary Helper
+    - name: Sofia Landi
+      title: PhD Student / Postdoc
+      now: "Schmidt Science Fellow, University of Washington"
+    - name: Pooja Viswanathan
+      title: Postdoc
+      now: "Postdoctoral Fellow, Icahn School of Medicine at Mount Sinai"
+    - name: Willa Kerkhoff
+      title: Research Assistant
+    - name: Ilaria Sani
+      title: Postdoc / Research Associate
+      now: "Assistant Professor, University of Geneva"
+    - name: Margaret M. Fabiszak
+      title: MD-PhD Student
+      now: "Anesthesiology, Brigham and Women's Hospital"
+    - name: Naphtali Abudarham
+      title: Visiting Fellow
+      now: "Researcher, Tel Aviv University"
+    - name: Michael McPhee
+      title: Research Assistant
+      now: "PhD Student, Northeastern University"
+    - name: Julia Sliwa
+      title: Postdoc / Research Associate / Guest Investigator
+      now: "Team Leader, Paris Brain Institute (ICM)"
+    - name: Dakota Blackman
+      title: Research Assistant
+    - name: Yifat Prut
+      title: Visiting Professor
+      now: "Professor, Hebrew University of Jerusalem"
+    - name: Astrid Hoellinger
+      title: Foreign Research Intern
+    - name: Stefan Schaffelhofer
+      title: Postdoc / Consultant
+    - name: Stephen Shepherd
+      title: Postdoc / Research Associate
+    - name: Jan Hartung
+      title: Visiting Student
+    - name: Monica Cano-Vinas
+      title: Research Specialist
+    - name: Timo van Kerkoerle
+      title: Guest Investigator
+      now: "Assistant Professor, Donders Institute, Radboud University"
+    - name: Caspar Schwiedrzik
+      title: Postdoc
+      now: "Professor, Ruhr University Bochum"
+    - name: Akinori Ebihara
+      title: PhD Student / Postdoc
+      now: "Principal Researcher, NEC Corporation"
+    - name: Philip Brandner
+      title: Foreign Research Intern / Consultant
+    - name: Ilker Yildirim
+      title: Postdoc
+      now: "Assistant Professor, Yale University"
+    - name: Bram van Vugt
+      title: Postdoc
+    - name: Maximilian Friedrich
+      title: Visiting Student
+    - name: Pablo Polosecki
+      title: PhD Student / Postdoc
+      now: "Senior Data Scientist, Icahn School of Medicine at Mount Sinai"
+    - name: Xingyi Li
+      title: Visiting Fellow
+    - name: Christian Hansel
+      title: Visiting Professor
+      now: "Professor, University of Chicago"
+    - name: Clark Fisher
+      title: MD-PhD Student
+    - name: Jonette Suiter
+      title: Administrative Assistant
+    - name: Srivatsun Sadagopan
+      title: Postdoc
+      now: "Associate Professor, University of Pittsburgh"
+    - name: Rizwan Huq
+      title: Research Assistant
+    - name: Nesibe Temiz
+      title: Foreign Research Intern
+    - name: Sara Steenrod
+      title: Postdoc
+    - name: Galit Yovel
+      title: Visiting Professor
+      now: "Professor, Tel Aviv University"
+    - name: Mykhailo Borisov
+      title: Computer Programmer
+    - name: Lucy S. Petro
+      title: Postdoc
+      now: "Research Fellow, University of Glasgow"
+    - name: Marie-Laure Schneider
+      title: Foreign Research Intern
+    - name: Manuel Garcia Garcia
+      title: Postdoc
+    - name: Heiko Stemmann
+      title: Postdoc
     # - name: Jane Doe
-    #   title: Postdoctoral Fellow, 2015–2020
-    #   now: Assistant Professor, Example University
+    #   title: Postdoc
+    #   now: Assistant Professor, Example University   (optional)

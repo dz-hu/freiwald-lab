@@ -6,7 +6,8 @@
     </div>
     <div>
       <a href="mailto:{{ site.email }}">{{ site.email }}</a><br>
-      <a href="{{ site.institution_url }}">{{ site.institution }}</a>
+      <a href="{{ site.institution_url }}">{{ site.institution }}</a><br>
+      <a href="{{ '/members/' | relative_url }}">Lab Wiki (members only)</a>
     </div>
     <div class="footer-meta">
       &copy; {{ 'now' | date: '%Y' }} {{ site.title }}

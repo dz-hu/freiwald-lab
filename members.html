@@ -1,0 +1,21 @@
+---
+title: Lab Members
+slug: members
+permalink: /members/
+subtitle: Internal resources for members of the Freiwald Lab.
+sitemap: false
+---
+<p class="intro">These pages are for lab members only and require a login.</p>
+
+<div class="resource-list">
+  {% for r in site.data.internal_links %}
+  <a class="resource" href="{{ r.url }}" target="_blank" rel="noopener">
+    <div>
+      <h2>{{ r.title }}</h2>
+      {% if r.description %}<p>{{ r.description }}</p>{% endif %}
+      {% if r.note %}<p class="muted resource-note">🔒 {{ r.note }}</p>{% endif %}
+    </div>
+    <span class="button">Open {{ r.title }} →</span>
+  </a>
+  {% endfor %}
+</div>

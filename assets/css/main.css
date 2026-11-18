@@ -27,7 +27,9 @@ body {
   color: var(--text);
   background: var(--white);
   -webkit-font-smoothing: antialiased;
+  min-height: 100vh; display: flex; flex-direction: column;
 }
+main { flex: 1 0 auto; }
 img { max-width: 100%; height: auto; display: block; }
 a { color: var(--blue); text-decoration: none; }
 a:hover { color: var(--blue-dark); text-decoration: underline; }
@@ -166,8 +168,10 @@ p { margin: 0 0 1em; }
 .person-featured h3 { font-size: 1.5rem; }
 .person-featured .person-title { font-size: 1.05rem; }
 .person-featured .person-links { justify-content: flex-start; }
-.alumni-list { columns: 2; column-gap: 40px; padding-left: 1.2em; }
-.alumni-list li { break-inside: avoid; margin-bottom: .6em; }
+.alumni-list { columns: 3; column-gap: 40px; list-style: none; padding: 0; margin: 0; font-size: .95rem; }
+.alumni-list li { break-inside: avoid; margin-bottom: .55em; line-height: 1.35; }
+.alumni-list .alumni-role { display: block; color: var(--muted); font-size: .88rem; }
+@media (max-width: 1000px) { .alumni-list { columns: 2; } }
 
 /* ---------- Gallery ---------- */
 .gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px; }
@@ -179,6 +183,20 @@ p { margin: 0 0 1em; }
   background: center / contain no-repeat url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 20' fill='none' stroke='%231B365D' stroke-width='1.5'%3E%3Crect x='1' y='4' width='22' height='15' rx='2'/%3E%3Ccircle cx='12' cy='11.5' r='4'/%3E%3Cpath d='M8 4l2-3h4l2 3'/%3E%3C/svg%3E");
 }
 .gallery figcaption { font-size: .95rem; margin-top: 8px; }
+
+/* ---------- Lab Members ---------- */
+.resource-list { display: grid; gap: 20px; max-width: 820px; margin-top: 28px; }
+.resource {
+  display: flex; align-items: center; justify-content: space-between; gap: 24px;
+  background: var(--light); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 28px 32px; color: var(--text);
+}
+.resource:hover { text-decoration: none; color: var(--text); border-color: var(--blue); box-shadow: 0 6px 20px rgba(27,54,93,.1); }
+.resource h2 { margin-bottom: .3em; }
+.resource p { margin: 0 0 .3em; }
+.resource-note { font-size: .92rem; }
+.resource .button { white-space: nowrap; flex-shrink: 0; }
+@media (max-width: 560px) { .resource { flex-direction: column; align-items: flex-start; } }
 
 /* ---------- Contact ---------- */
 .contact-grid { display: grid; grid-template-columns: 1fr 1.3fr; gap: 48px; }
